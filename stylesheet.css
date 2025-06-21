@@ -1,0 +1,234 @@
+/* General Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #9dcedc;
+    color: #b0f17751;
+    line-height: 1.6;
+}
+
+/* Header Styles */
+.main-header {
+    background-color: #8B0000; /* Dark Red */
+    color: white;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.main-nav .nav-list {
+    list-style: none;
+
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.main-nav .nav-list li {
+    margin: 0 15px;
+}
+
+.main-nav .nav-list a {
+    color: rgba(12, 109, 219, 0.434);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+    border-radius: 4px;
+}
+
+.main-nav .nav-list a:hover,
+.main-nav .nav-list a:focus {
+
+    background-color: #85bcc6; /* Brownish Red */
+}
+
+/* Hero Section Styles */
+.hero-redesigned {
+    background: linear-gradient to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ;
+    text-align: center;
+    padding: 100px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px; /* Ensure a decent 
+
+height */
+}
+
+.hero-redesigned h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero-redesigned p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin-bottom: 40px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.btn {
+
+    display: inline-block;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.primary-btn {
+    background-color: #FFD700; /* Gold */
+    color: #333;
+    border: none;
+}
+
+.primary-btn:hover {
+    background-color: #FFC400;
+    transform: translateY(-2px);
+}
+
+.secondary-btn {
+
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.secondary-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Features Section Styles */
+.features-redesigned {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 50px 20px;
+    background-color: white;
+    gap: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 40px auto;
+    max-width: 1200px;
+
+    border-radius: 8px;
+}
+
+.feature-card-redesigned {
+    flex-basis: calc(33% - 40px); /* Approx 3 cards per row with gap */
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card-redesigned:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.feature-card-redesigned .feature-icon {
+
+    font-size: 3rem;
+    color: #ed6868; /* Dark Red */
+    margin-bottom: 15px;
+}
+
+.feature-card-redesigned h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.feature-card-redesigned p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Footer Styles */
+.main-footer {
+    background-color: #5a4646;
+    color: white;
+    text-align: center;
+
+    padding: 30px 20px;
+    font-size: 0.9rem;
+}
+
+.main-footer p {
+    margin: 5px 0;
+}
+
+.main-footer a {
+    color: #FFD700; /* Gold */
+    text-decoration: none;
+    margin: 0 5px;
+    transition: color 0.3s ease;
+}
+
+.main-footer a:hover {
+    color: #FFC400;
+}
+
+.social-links {
+    margin-top: 15px;
+
+}
+
+.social-icon {
+    font-size: 1.5rem;
+    margin: 0 10px;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #FFD700; /* Gold */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-nav .nav-list {
+        flex-direction: column;
+    }
+
+    .main-nav .nav-list li {
+        margin: 10px 0;
+
+    }
+
+    .hero-redesigned h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-redesigned p {
+        font-size: 1rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .feature-card-redesigned {
+        flex-basis: 90%; /* Stack cards on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-redesigned h1 {
+        font-size: 2rem;
+    }
+}
+

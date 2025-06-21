@@ -1,0 +1,325 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wasiliana Nasi - Mama Abia Grill</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+
+        }
+        .container {
+            width: 90%;
+            max-width: 960px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        header h1 {
+            color: #d35400; /* A warm, inviting orange */
+            font-size: 2.8em;
+
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+        }
+        header p {
+            font-size: 1.1em;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        h2 {
+            color: #e67e22; /* Slightly darker orange */
+            font-size: 2em;
+            border-bottom: 2px solid #f0c47d;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            text-align: center;
+
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .info-card {
+            background-color: #fffaf0; /* Light cream background */
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center; /* Center content in info cards */
+        }
+        .info-card:hover {
+            transform: translateY(-5px);
+
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+        .info-card h3 {
+            color: #d35400;
+            font-size: 1.5em;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        .info-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .info-card li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Center list items */
+            font-size: 1.05em;
+
+            color: #444;
+        }
+        .info-card li strong {
+            color: #e67e22;
+            margin-right: 8px;
+        }
+        .icon {
+            margin-right: 10px;
+            color: #d35400;
+            font-size: 1.2em;
+        }
+        /* Using Unicode characters for icons */
+        .info-card li:nth-child(1) .icon::before { content: '📍'; } /* Address */
+        .info-card li:nth-child(2) .icon::before { content: '📞'; } /* Phone */
+        .info-card li:nth-child(3) .icon::before { content: '📧'; } /* Email */
+        .info-card.hours li:nth-child(1) .icon::before { content: '⏰'; } /* Monday - Saturday */
+
+        .info-card.hours li:nth-child(2) .icon::before { content: '🗓️'; } /* Sunday */
+        .info-card.hours li:nth-child(3) .icon::before { content: '🍽️'; } /* Lunch */
+        .info-card.hours li:nth-child(4) .icon::before { content: '🌙'; } /* Dinner */
+
+
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+
+            font-weight: bold;
+            color: #555;
+            font-size: 1.1em;
+        }
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1em;
+            box-sizing: border-box; /* Include padding in width */
+            transition: border-color 0.3s ease;
+        }
+        .form-group input[type="text"]:focus,
+        .form-group input[type="email"]:focus,
+        .form-group textarea:focus {
+            border-color: #d35400;
+            outline: none;
+
+            box-shadow: 0 0 5px rgba(211, 84, 0, 0.3);
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        .submit-btn {
+            background-color: #d35400;
+            color: white;
+            padding: 14px 25px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            align-self: center; /* Center the button */
+        }
+
+        .submit-btn:hover {
+            background-color: #e67e22;
+            transform: translateY(-2px);
+        }
+        .social-media {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .social-links a {
+            display: inline-block;
+            margin: 0 15px;
+            padding: 10px 20px;
+            background-color: #e67e22;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .social-links a:hover {
+            background-color: #d35400;
+            transform: translateY(-3px);
+        }
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #777;
+            font-size: 0.95em;
+        }
+        footer p {
+            margin: 5px 0;
+        }
+        footer a {
+            color: #e67e22;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #d35400;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Wasiliana Nasi</h1>
+            [span_0](start_span)<p>Tunapenda kusikia ukitupigia kwenye mawasiliano yetu kutujulisha vitu mbalimbali kama vile kuweka oda yako kwa ajili ya kufanya usafirishaji wa haraka, tafadhali wasiliana nasi.[span_0](end_span)</p>
+        </header>
+        
+        <section class="section contact-info">
+            <h2>Maelezo ya Mawasiliano na Saa za Kazi</h2>
+
+            <div class="contact-grid">
+                <div class="info-card">
+                    <h3>Mawasiliano</h3>
+                    <ul>
+                        <li>
+                            <span class="icon"></span>
+                            [span_1](start_span)<strong>Anuani:</strong> Mama Abia Grill, Kigamboni, Dar es Salaam, Tanzania[span_1](end_span)
+                        </li>
+                        <li>
+                            <span class="icon"></span>
+                            [span_2](start_span)<strong>Simu:</strong> +255 716789764[span_2](end_span)
+                        </li>
+                        <li>
+                            <span class="icon"></span>
+                            [span_3](start_span)<strong>Email:</strong> 
+
+info@mamaabiagrill.co.tz[span_3](end_span)
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="info-card hours">
+                    <h3>Saa za Kufungua</h3>
+                    <ul>
+                        <li>
+                            <span class="icon"></span>
+                            [span_4](start_span)<strong>Jumatatu - Jumamosi:</strong> 10:00 AM – 10:00 PM[span_4](end_span)
+                        </li>
+                        <li>
+                            <span class="icon"></span>
+                            [span_5](start_span)<strong>Jumapili:</strong> 12:00 PM – 8:00 PM[span_5](end_span)
+                        </li>
+
+                        <li>
+                            <span class="icon"></span>
+                            [span_6](start_span)<strong>Chakula cha Mchana:</strong> 12:00 PM - 3:00 PM[span_6](end_span)
+                        </li>
+                        <li>
+                            <span class="icon"></span>
+                            [span_7](start_span)<strong>Chakula cha Jioni:</strong> 6:00 PM - 10:00 PM[span_7](end_span)
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section contact-form">
+            <h2>Tuma Ujumbe Moja kwa Moja</
+
+h2>
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="name">Jina:</label>
+                    <input type="text" id="name" name="name" required style="border: 1px solid #d35400;">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Barua Pepe:</label>
+                    <input type="email" id="email" name="email" required style="border: 1px solid #d35400;">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Ujumbe:</label>
+                    <textarea id="message" 
+
+name="message" required style="border: 1px solid #d35400;"></textarea>
+                </div>
+                
+                [span_8](start_span)<button type="submit" class="submit-btn">Tuma Ujumbe</button>[span_8](end_span)
+            </form>
+        </section>
+        
+        <section class="section social-media">
+            <h2>Tufuate Mitandaoni</h2>
+            <div class="social-links">
+                <a href="pee1" aria-label="Facebook">Facebook: @mamaabiagrill</a>
+                <a href="pee2" aria-label="Twitter">Twitter: @mamaabiagrill</a>
+                <a href="pee3" aria-label="Instagram">Instagram: 
+
+@officialmamaabiagrill</a>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; [span_9](start_span)Mama Abia Grill</p>[span_9](end_span)
+        [span_10](start_span)<p>Wasiliana nasi: +255 778654321, +255 6876545321</p>[span_10](end_span)
+        <p>
+            <a href="pee1" aria-label="Facebook">Facebook: @mamaabiagrill</a>
+            <a href="pee2" aria-label="Twitter">Twitter: @mamaabiagrill</a>
+            <a href="pee3" aria-label="Instagram">Instagram: @officialmamaabiagrill</a>
+
+        </p>
+    </footer>
+</body>
+</html>
+
